@@ -1,4 +1,4 @@
-package com.rtmovies;
+package com.rtmovies.model;
 
 public class Rating {
 	public Rating() {
