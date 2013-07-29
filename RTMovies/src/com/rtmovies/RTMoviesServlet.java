@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.appengine.api.files.BufferedFileReadChannelImpl;
 import com.google.appengine.api.urlfetch.HTTPResponse;
 import com.google.appengine.api.urlfetch.URLFetchService;
 import com.google.appengine.api.urlfetch.URLFetchServiceFactory;
@@ -21,7 +22,10 @@ public class RTMoviesServlet extends HttpServlet {
 	String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=50&country=de&apikey=";
 	long militimeoflastrequest = 0;
 	HTTPResponse lastresponse = null;
+	
 	URLFetchService fetcher;
+	private boolean devmode = true;
+
 
 	public RTMoviesServlet() {
 
@@ -44,16 +48,20 @@ public class RTMoviesServlet extends HttpServlet {
 			resp.getWriter().write(gson.toJson(boxoffice));
 
 		} else {
-			resp.getWriter().write("test");
+			resp.getWriter().write("abort");
 		}
 
 	}
 
 	public HTTPResponse getMovies() {
+		
 		long timedelta = new Date().getTime() - militimeoflastrequest;
 		if (timedelta > 60000) {
 			try {
-				this.lastresponse = fetcher.fetch(new URL(url + apikey));
+				if (this.devmode) {
+					this.lastresponse = fetcher.fetch(new URL("http://localhost:8888/data.json"));
+				} else {
+				this.lastresponse = fetcher.fetch(new URL(url + apikey));}
 			} catch (MalformedURLException e) {
 
 				e.printStackTrace();
