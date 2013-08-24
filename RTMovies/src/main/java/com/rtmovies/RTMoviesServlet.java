@@ -59,7 +59,7 @@ public class RTMoviesServlet extends HttpServlet {
 		if (timedelta > 60000) {
 			try {
 				if (this.devmode) {
-					this.lastresponse = fetcher.fetch(new URL("http://localhost:8888/data.json"));
+					this.lastresponse = fetcher.fetch(new URL("http://localhost:8080/data.json"));
 				} else {
 				this.lastresponse = fetcher.fetch(new URL(url + apikey));}
 			} catch (MalformedURLException e) {
