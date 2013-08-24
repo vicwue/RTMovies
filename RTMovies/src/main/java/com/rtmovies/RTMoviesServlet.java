@@ -22,9 +22,11 @@ public class RTMoviesServlet extends HttpServlet {
 	String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=50&country=de&apikey=";
 	long militimeoflastrequest = 0;
 	HTTPResponse lastresponse = null;
+	String SourceURL = null;
 	
 	URLFetchService fetcher;
 	private boolean devmode = true;
+	
 
 
 	public RTMoviesServlet() {
@@ -35,6 +37,7 @@ public class RTMoviesServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		this.SourceURL= req.getRequestURL().toString();
 		resp.setContentType("text/plain");
 		getMovies();
 		if (lastresponse != null) {
@@ -59,7 +62,7 @@ public class RTMoviesServlet extends HttpServlet {
 		if (timedelta > 60000) {
 			try {
 				if (this.devmode) {
-					this.lastresponse = fetcher.fetch(new URL("http://localhost:8080/data.json"));
+					this.lastresponse = fetcher.fetch(new URL("http://localhost:8008/data.json"));
 				} else {
 				this.lastresponse = fetcher.fetch(new URL(url + apikey));}
 			} catch (MalformedURLException e) {
