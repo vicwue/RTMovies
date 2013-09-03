@@ -6,20 +6,72 @@
 
 <title>Table example with JSONModel and AJAX call to local JSON
 	service</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
 
+<style>
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+/*   width: 960px; */
+background: #000;
+}
+
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #555;
+}
+
+.node {
+  border: solid 1px #555;
+  font-size:40px;
+  line-height: normal;
+  overflow: hidden;
+  position: absolute;
+  background-position-x: center;
+background-repeat: no-repeat;
+
+  background-size:auto 100% ; 
+  vertical-align: bottom;
+  text-align: center;
+  background-color: #000;
+ text-shadow: 0 -1px 1px #FFFFFF, 0 1px 1px #666666,0 0 10px #000000, 0 0 30px #000000, 0 0 50px #000000;
+color:#fff;
+opacity:0.8;
+}
+.node:hover {
+opacity: 1;
+}
+#title {
+position:absolute;
+top: 10px;
+left: 10px;
+color: #fff;
+font: 20px 'Gochi Hand';
+ text-shadow: 0 -1px 1px #FFFFFF, 0 1px 1px #666666,0 0 10px #000000, 0 0 30px #000000, 0 0 50px #000000;
+}
+
+</style>
 <!-- Load UI5, select gold reflection theme and the "commons" and "table" control libraries -->
-<script id='sap-ui-bootstrap' type='text/javascript'
-	src='resources/sap-ui-core.js' data-sap-ui-theme='sap_goldreflection'
-	data-sap-ui-libs='sap.ui.commons,sap.ui.table'></script>
-<script id='sap-ui-bootstrap' type='text/javascript'
-	src='resources/app/app.js' ></script>
-<script>
+<!-- <script id='sap-ui-bootstrap' type='text/javascript' -->
+<!-- 	src='resources/sap-ui-core.js' data-sap-ui-theme='sap_goldreflection' -->
+<!-- 	data-sap-ui-libs='sap.ui.commons,sap.ui.table'></script> -->
+	<script type='text/javascript'
+	src='d3.v3.min.js' ></script>
 
-	
-</script>
 
 </head>
-<body class='sapUiBody'>
-	<div id='content'></div>
+<body >
+<form>
+  <label><input type="radio" name="mode" value="size" checked> Size</label>
+  <label><input type="radio" name="mode" value="count"> Count</label>
+</form>
+<script type='text/javascript'
+	src='resources/app/appd3.js' ></script>
+<span id="title">Box Office: Rotten Tomatoes</span>
 </body>
 </html>

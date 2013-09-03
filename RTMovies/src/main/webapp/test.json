@@ -1,0 +1,40 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "size": 38,
+            "thumbnail": "http://content7.flixster.com/movie/11/17/26/11172689_mob.jpg",
+            "name": "Percy Jackson: Sea of Monsters"
+        },
+        {
+            "size": 90,
+            "thumbnail": "http://content7.flixster.com/movie/11/17/26/11172689_mob.jpg",
+            "name": "Blue Jasmine"
+        },
+        {
+            "size": 73,
+            "thumbnail": "http://content7.flixster.com/movie/11/17/26/11172689_mob.jpg",
+            "name": "You're Next"
+        },
+        {
+            "size": 76,
+            "thumbnail": "http://content8.flixster.com/movie/11/17/21/11172174_mob.jpg",
+            "name": "Despicable Me 2"
+        },
+        {
+            "size": 62,
+            "thumbnail": "http://content7.flixster.com/movie/11/17/26/11172689_mob.jpg",
+            "name": "2 Guns"
+        },
+        {
+            "size": 43,
+            "thumbnail": "http://content6.flixster.com/movie/11/17/16/11171664_mob.jpg",
+            "name": "Closed Circuit"
+        },
+        {
+            "size": 75,
+            "thumbnail": "http://content7.flixster.com/movie/11/17/30/11173049_mob.jpg",
+            "name": "The Grandmaster"
+        }
+    ]
+}
